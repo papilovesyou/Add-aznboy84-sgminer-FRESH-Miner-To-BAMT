@@ -2,9 +2,9 @@
 mine stop
 sleep 5
 cd /opt/miners/
-git clone https://github.com/aznboy84/freshgpu sgminer-fresh
-cd /opt/miners/sgminer-fresh
-cp /opt/miners/sgminer-4.1.0-sph/ADL_SDK/* /opt/miners/sgminer-fresh/ADL_SDK/
+git clone https://github.com/aznboy84/freshgpu sgminer-freshmod
+cd /opt/miners/sgminer-freshmod
+cp /opt/miners/sgminer-4.1.0-sph/ADL_SDK/* /opt/miners/sgminer-freshmod/ADL_SDK/
 make clean
 sleep 5
 chmod +x autogen.sh
@@ -15,20 +15,20 @@ sleep 5
 make install
 sleep 5
 clear
-cp example.conf /etc/bamt/aznboy84-fresh.conf
+cp example.conf /etc/bamt/aznboy84-freshmod.conf
 cd /etc/bamt/
 patch /etc/bamt/bamt.conf <<.
 116a118
-> cgminer_opts: --api-listen --config /etc/bamt/aznboy84-fresh.conf
-124a128
+> cgminer_opts: --api-listen --config /etc/bamt/aznboy84-freshmod.conf
+124a127
 > # anzboy84 FRESH Freshcoin "FRSH"
-129a134
-> miner-aznboy84-fresh: 1
+129a133
+> miner-aznboy84-freshmodh: 1
 .
 patch /opt/bamt/common.pl <<.
 1477a1478,1480
-> } elsif (\${\$conf}{'settings'}{'miner-aznboy84-fresh'}) {
-> \$cmd = "cd /opt/miners/sgminer-fresh/;/usr/bin/screen -d -m -S sgminer-fresh /opt/miners/sgminer-fresh/sgminer \$args";
+> } elsif (\${\$conf}{'settings'}{'miner-aznboy84-freshmod'}) {
+> \$cmd = "cd /opt/miners/sgminer-freshmod/;/usr/bin/screen -d -m -S sgminer-fresh /opt/miners/sgminer-freshmod/sgminer \$args";
 > \$miner = "sgminer-fresh";
 .
 cd /etc/bamt/
@@ -49,4 +49,4 @@ patch /etc/bamt/aznboy84-fresh.conf <<.
 .
 echo 'aznboy84 Miner Installed.'
 echo 'Please review your /etc/bamt/bamt.conf to enable.'
-echo 'Configure /etc/bamt/aznboy84-fresh.conf with pool'
+echo 'Configure /etc/bamt/aznboy84-freshmod.conf with pool'
