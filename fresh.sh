@@ -32,7 +32,7 @@ patch /opt/bamt/common.pl <<.
 > \$miner = "sgminer-fresh";
 .
 cd /etc/bamt/
-patch /etc/bamt/aznboy84-fresh.conf <<.
+patch /etc/bamt/aznboy84-freshmod.conf <<.
 22c22
 < "kernel" : "ckolivas,ckolivas,ckolivas",
 ---
