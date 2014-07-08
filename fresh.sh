@@ -23,7 +23,7 @@ patch /etc/bamt/bamt.conf <<.
 124a127
 > # anzboy84 FRESH Freshcoin "FRSH"
 129a133
-> miner-aznboy84-freshmodh: 1
+> miner-aznboy84-freshmod: 1
 .
 patch /opt/bamt/common.pl <<.
 1477a1478,1480
