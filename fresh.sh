@@ -7,7 +7,7 @@ cd /opt/miners/sgminer-freshmod
 cp /opt/miners/sgminer-4.1.0-sph/ADL_SDK/* /opt/miners/sgminer-freshmod/ADL_SDK/
 make clean
 sleep 5
-chmod +x autogen.sh
+chmod u+x autogen.sh
 ./autogen.sh
 sleep 2
 CFLAGS="-O2 -Wall -march=native -I /opt/AMDAPP/include/" LDFLAGS="-L/opt/AMDAPP/lib/x86" ./configure --enable-opencl
